@@ -1,6 +1,6 @@
 import React from "react";
 import NewYearCountdown from "./NewYearCountdown";
-import "./NewYearReffle.css";
+import "./Header.css";
 
 class Header extends React.Component {
   constructor(props) {
@@ -73,23 +73,21 @@ class Header extends React.Component {
               alt="..."
             />
             {/* <!-- Masthead Heading--> */}
-            <h1 className="masthead-heading text-uppercase mb-0">Swat Farm</h1>
+            <h1 className="masthead-heading text-uppercase mb-0">At Swat Farm</h1>
             {/* <!-- Icon Divider--> */}
             <div className="divider-custom divider-light">
               <div className="divider-custom-line"></div>
               <div className="divider-custom-icon">
                 <img
                   className="masthead-avatar mb-6 newyearhead"
-                  src="../assets/img/portfolio/happy-new-year.png"
+                  src="https://media.giphy.com/media/RpHHzWCTyxArcRdOS0/giphy.gif"
                   alt="..."
                 />
               </div>
               <div className="divider-custom-line"></div>
             </div>
             {/* <!-- Masthead Subheading--> */}
-            <p className="masthead-subheading font-weight-light mb-0">
-              Happy New Year at Swat Farm
-            </p>
+            
           </div>
         </header>
       </>

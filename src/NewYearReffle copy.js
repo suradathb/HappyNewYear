@@ -2,71 +2,21 @@ import React, { useState, useEffect } from "react";
 import "./NewYearReffle.css";
 import NewYearUI from "./NewYearUI";
 
+
 function NewYearRaffle() {
   const [countdown, setCountdown] = useState(10); // Initialize countdown at 10 seconds
   const [raffleList, setRaffleList] = useState([]); // Initialize raffle list
   const [winner, setWinner] = useState(""); // Initialize winner state
   const [picture, setPicture] = useState(null); // Initialize picture state
 
-  // const [countdown, setCountdown] = useState(null); // Initialize countdown state
-  const [names, setNames] = useState([]); // Initialize names state
-  const [selectedName, setSelectedName] = useState(""); // Initialize selected name state
-  const [status, setStatus] = useState("ready"); // Initialize status state
-  // Calculate remaining time until New Year
-  useEffect(() => {
-    const now = new Date();
-    const newYear = new Date(now.getFullYear() + 1, 0, 1);
-    const remaining = newYear - now;
-    const countdown = {
-      days: Math.floor(remaining / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-      minutes: Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60)),
-      seconds: Math.floor((remaining % (1000 * 60)) / 1000),
-    };
-    setCountdown(countdown);
-  }, []);
-  // Handle form submission
+  // Function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    const input = event.target.name;
-    if (input.value) {
-      setNames([...names, input.value]); // Add name to list
-      input.value = ""; // Clear input field
-    }
+    const name = event.target.name.value; // Get name from form input
+    const file = event.target.picture.files[0]; // Get picture file from form input
+    setRaffleList([...raffleList, { name, picture: file }]); // Add name and picture to raffle list
+    event.target.name.value = ""; // Clear form input
   };
-  // Handle draw button click
-  const handleDraw = () => {
-    if (names.length > 0) {
-      setStatus("drawing"); // Set status to "drawing"
-      // Delay selection of name and announcement of results
-      setTimeout(() => {
-        // Select a random name
-        const index = Math.floor(Math.random() * names.length);
-        const newNames = [...names];
-        const selectedName = newNames[index];
-        newNames.splice(index, 1);
-
-        setSelectedName(selectedName);
-        setNames(newNames); // Update names array with copy
-        setStatus("announced"); // Set status to "announced"
-      }, 10000); // Delay for 10 seconds
-    }
-  };
-
-  // Handle reset button click
-  const handleReset = () => {
-    setStatus("ready"); // Set status to "ready"
-    setSelectedName(""); // Reset selected name
-  };
-
-  // // Function to handle form submission
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const name = event.target.name.value; // Get name from form input
-  //   const file = event.target.picture.files[0]; // Get picture file from form input
-  //   setRaffleList([...raffleList, { name, picture: file }]); // Add name and picture to raffle list
-  //   event.target.name.value = ""; // Clear form input
-  // };
 
   // Function to handle button click
   const handleClick = () => {
@@ -88,7 +38,6 @@ function NewYearRaffle() {
 
     return () => clearTimeout(timer); // Clean up timer when component unmounts
   }, []);
-  
   return (
     <>
       {/* <!-- Portfolio Section--> */}
@@ -122,11 +71,24 @@ function NewYearRaffle() {
                   className="form-control"
                   id="name"
                   type="text"
-                  name="name"
                   placeholder="Enter your name..."
                   data-sb-validations="required"
                 />
                 <label htmlFor="name">Full name</label>
+                <div
+                  className="invalid-feedback"
+                  data-sb-feedback="name:required"
+                >
+                  A name is required.
+                </div>
+              </div>
+              <div className="form-floating mb-3">
+                <input
+                  type="file"
+                  className="form-control"
+                  name="picture"
+                  accept="image/*"
+                />
                 <div
                   className="invalid-feedback"
                   data-sb-feedback="name:required"
@@ -146,15 +108,29 @@ function NewYearRaffle() {
                 </div>
               </div>
             </form>
-            <div class="container text-center">
-              <div class="row align-items-start">
-                {names.map((name) => (
-                  <h1 className="block-1" kay={name}>
-                    <h1 className="badge bg-secondary ">{name}</h1>
-                  </h1>
+
+            <table className="table">
+              <thead>
+                <tr>
+                  <th scope="col">ชื่อ</th>
+                  <th scope="col">รูป</th>
+                </tr>
+              </thead>
+              <tbody>
+                {raffleList.map(({ name, picture }) => (
+                  <tr kay={name}>
+                    <td>{name}</td>
+                    <td>
+                      <img
+                        src={URL.createObjectURL(picture)}
+                        alt={name}
+                        className="picture showimage"
+                      />
+                    </td>
+                  </tr>
                 ))}
-              </div>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -193,35 +169,13 @@ function NewYearRaffle() {
           </div>
           {/* <!-- About Section Button--> */}
           <div className="text-center mt-4">
-            {status === "ready" && (
-              <button className="btn btn-primary btn-xl" onClick={handleDraw}>
-                จับฉลาก
-              </button>
-            )}
-            {status === "drawing" && (
-              // <div class="spinner-border text-success" role="status">
-              <div>
-                {/* <span class="visually-hidden">Loading...</span> */}
-                <img
-                  className="winimage"
-                  src="https://media.giphy.com/media/ferYVfmvi2IN5indq1/giphy.gif"
-                  alt="..."
-                />
-              </div>
-            )}
-            {status === "announced" && (
-              <>
-                <p>
-                  รางวัลที่ออกได้แก่ : <h1>{selectedName}</h1>
-                </p>
-                <button
-                  className="btn btn-primary btn-xl"
-                  onClick={handleReset}
-                >
-                  เตรียมจับใหม่
-                </button>
-              </>
-            )}
+            <button
+              className="btn btn-primary btn-xl"
+              onClick={handleClick}
+              disabled={raffleList.length === 0}
+            >
+              Draw winner
+            </button>
           </div>
         </div>
       </section>

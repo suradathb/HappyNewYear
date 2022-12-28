@@ -89,3 +89,11 @@
   padding: 5px;
   width: 70px;
 }
+
+.block-1 {
+	width: 20px;
+	height: 20px;
+	margin: 5rem;
+  /* padding-left: 1rem; */
+	/* background: #0E9F98; */
+}

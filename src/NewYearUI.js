@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NewYearCountdown from "./NewYearCountdown";
+import "./NewYearUI.css";
 
 function NewYearUI() {
   const [countdown, setCountdown] = useState(10); // Initialize countdown at 10 seconds
@@ -20,9 +21,14 @@ function NewYearUI() {
 
   return (
     <div>
-      <h1>SWAT Happy New Year!</h1>
-      <h1>Countdown to New Year: <NewYearCountdown/> seconds</h1>
-      {fireworks && <img src="../image/fireworks-lowres.jpg" alt="Fireworks" />}
+      <h1>SWAT Happy New Year Count Down 2023</h1>
+      <h1>งานปาตี้ปีใหม่เริ่ม 18:00 น. - เช้าจ้า </h1>
+      <h3>ร่วมจับฉลากราคาไม่เกิน 300 บาท เริ่มจับ 20:00 น. เป็นต้นไป</h3>
+      <h3>เครื่องดื่มฟรีเพราะเราออกกันเอง ที่นอนฟรีนะมีเต้นนอนเต้นมีพื้นนอนพื่นจ้า</h3>
+      <br></br>
+      <h5 className="note">Note : เข้างานแล้วห้ามออกไปไหนนะเพราะอันตรายเราจะเมากัน</h5>
+      <br></br>
+      <img className="show" src="https://media.giphy.com/media/XxePWdpdifKZr1Uhix/giphy.gif" alt="Fireworks" />
     </div>
   );
 }
