@@ -5,6 +5,7 @@ import NewYearRaffle from "./NewYearReffle";
 import NewYearUI from "./NewYearUI";
 import Header from "./Header";
 import Footer from "./Footer";
+import NewYearCountdown from "./NewYearCountdown";
 
 
 function App() {

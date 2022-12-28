@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NewYearCountdown from "./NewYearCountdown";
 
 function NewYearUI() {
   const [countdown, setCountdown] = useState(10); // Initialize countdown at 10 seconds
@@ -19,8 +20,8 @@ function NewYearUI() {
 
   return (
     <div>
-      <h1>Happy New Year!</h1>
-      <h1>Countdown to New Year: {countdown} seconds</h1>
+      <h1>SWAT Happy New Year!</h1>
+      <h1>Countdown to New Year: <NewYearCountdown/> seconds</h1>
       {fireworks && <img src="../image/fireworks-lowres.jpg" alt="Fireworks" />}
     </div>
   );

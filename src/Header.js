@@ -1,4 +1,5 @@
 import React from "react";
+import NewYearCountdown from "./NewYearCountdown";
 
 class Header extends React.Component {
   constructor(props) {
@@ -11,15 +12,15 @@ class Header extends React.Component {
     return (
       <>
         <nav
-          class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
+          className="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
           id="mainNav"
         >
-          <div class="container">
-            <a class="navbar-brand" href="#page-top">
-			Swat Farm
+          <div className="container">
+            <a className="navbar-brand" href="#page-top">
+              Swat Farm
             </a>
             <button
-              class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
+              className="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarResponsive"
@@ -28,25 +29,25 @@ class Header extends React.Component {
               aria-label="Toggle navigation"
             >
               Menu
-              <i class="fas fa-bars"></i>
+              <i className="fas fa-bars"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-0 mx-lg-1">
+            <div className="collapse navbar-collapse" id="navbarResponsive">
+              <ul className="navbar-nav ms-auto">
+                <li className="nav-item mx-0 mx-lg-1">
                   <a
-                    class="nav-link py-3 px-0 px-lg-3 rounded"
+                    className="nav-link py-3 px-0 px-lg-3 rounded"
                     href="#portfolio"
                   >
                     ลงชื่อจับฉลาก
                   </a>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                  <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">
+                <li className="nav-item mx-0 mx-lg-1">
+                  <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#about">
                     จับฉลาก
                   </a>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                  <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">
+                <li className="nav-item mx-0 mx-lg-1">
+                  <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">
                     Contact
                   </a>
                 </li>
@@ -54,22 +55,31 @@ class Header extends React.Component {
             </div>
           </div>
         </nav>
-		{/* <!-- Masthead--> */}
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                {/* <!-- Masthead Avatar Image--> */}
-                <img class="masthead-avatar mb-5" src="../assets/img/portfolio/cabin.png" alt="..." />
-                {/* <!-- Masthead Heading--> */}
-                <h1 class="masthead-heading text-uppercase mb-0">Swat Farm</h1>
-                {/* <!-- Icon Divider--> */}
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                {/* <!-- Masthead Subheading--> */}
-                <p class="masthead-subheading font-weight-light mb-0">Happy New Year at Swat Farm</p>
+        {/* <!-- Masthead--> */}
+        <header className="masthead bg-primary text-white text-center">
+          <div className="container d-flex align-items-center flex-column">
+            <NewYearCountdown />
+            {/* <!-- Masthead Avatar Image--> */}
+            <img
+              className="masthead-avatar mb-5"
+              src="../assets/img/portfolio/cabin.png"
+              alt="..."
+            />
+            {/* <!-- Masthead Heading--> */}
+            <h1 className="masthead-heading text-uppercase mb-0">Swat Farm</h1>
+            {/* <!-- Icon Divider--> */}
+            <div className="divider-custom divider-light">
+              <div className="divider-custom-line"></div>
+              <div className="divider-custom-icon">
+                <i className="fas fa-star"></i>
+              </div>
+              <div className="divider-custom-line"></div>
             </div>
+            {/* <!-- Masthead Subheading--> */}
+            <p className="masthead-subheading font-weight-light mb-0">
+              Happy New Year at Swat Farm
+            </p>
+          </div>
         </header>
       </>
     );

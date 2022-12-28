@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./NewYearReffle.css";
 import NewYearUI from "./NewYearUI";
 
+
 function NewYearRaffle() {
   const [countdown, setCountdown] = useState(10); // Initialize countdown at 10 seconds
   const [raffleList, setRaffleList] = useState([]); // Initialize raffle list
@@ -40,56 +41,56 @@ function NewYearRaffle() {
   return (
     <>
       {/* <!-- Portfolio Section--> */}
-      <section class="page-section portfolio" id="portfolio">
-        <div class="container">
+      <section className="page-section portfolio" id="portfolio">
+        <div className="container">
           {/* <!-- Portfolio Section Heading--> */}
-          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+          <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">
             ลงชื่อจับฉลากกัน
           </h2>
           {/* <!-- Icon Divider--> */}
-          <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-              <i class="fas fa-star"></i>
+          <div className="divider-custom">
+            <div className="divider-custom-line"></div>
+            <div className="divider-custom-icon">
+              <i className="fas fa-star"></i>
             </div>
-            <div class="divider-custom-line"></div>
+            <div className="divider-custom-line"></div>
           </div>
           {/* <!-- Portfolio Grid Items--> */}
-          <div class="row justify-content-center">
+          <div className="row justify-content-center">
             <form
               id="contactForm"
               data-sb-form-api-token="API_TOKEN"
               onSubmit={handleSubmit}
             >
-              <div class="form-floating mb-3">
+              <div className="form-floating mb-3">
                 <input
-                  class="form-control"
+                  className="form-control"
                   id="name"
                   type="text"
                   placeholder="Enter your name..."
                   data-sb-validations="required"
                 />
-                <label for="name">Full name</label>
-                <div class="invalid-feedback" data-sb-feedback="name:required">
+                <label htmlFor="name">Full name</label>
+                <div className="invalid-feedback" data-sb-feedback="name:required">
                   A name is required.
                 </div>
               </div>
-              <div class="form-floating mb-3">
+              <div className="form-floating mb-3">
                 <input
                   type="file"
-                  class="form-control"
+                  className="form-control"
                   name="picture"
                   accept="image/*"
                 />
-                <div class="invalid-feedback" data-sb-feedback="name:required">
+                <div className="invalid-feedback" data-sb-feedback="name:required">
                   A name is required.
                 </div>
               </div>
-              <div class="form-floating mb-3">
-                <button class="btn btn-primary btn-xl " type="submit">
+              <div className="form-floating mb-3">
+                <button className="btn btn-primary btn-xl " type="submit">
                   Add to raffle
                 </button>
-                <div class="invalid-feedback" data-sb-feedback="name:required">
+                <div className="invalid-feedback" data-sb-feedback="name:required">
                   A name is required.
                 </div>
               </div>
@@ -97,8 +98,10 @@ function NewYearRaffle() {
 
             <table className="table">
               <thead>
+                <tr>
                 <th scope="col">ชื่อ</th>
                 <th scope="col">รูป</th>
+                </tr>
               </thead>
               <tbody>
                 {raffleList.map(({ name, picture }) => (
@@ -118,35 +121,35 @@ function NewYearRaffle() {
           </div>
         </div>
       </section>
-      <section class="page-section bg-primary text-white mb-0" id="about">
-        <div class="container">
+      <section className="page-section bg-primary text-white mb-0" id="about">
+        <div className="container">
           {/* <!-- About Section Heading--> */}
-          <h2 class="page-section-heading text-center text-uppercase text-white">
+          <h2 className="page-section-heading text-center text-uppercase text-white">
             จับฉลาก
           </h2>
           {/* <!-- Icon Divider--> */}
-          <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-              <i class="fas fa-star"></i>
+          <div className="divider-custom divider-light">
+            <div className="divider-custom-line"></div>
+            <div className="divider-custom-icon">
+              <i className="fas fa-star"></i>
             </div>
-            <div class="divider-custom-line"></div>
+            <div className="divider-custom-line"></div>
           </div>
           {/* <!-- About Section Content--> */}
-          <div class="row">
-            <div class="col-lg-4 ms-auto">
+          <div className="row">
+            <div className="col-lg-4 ms-auto">
               {picture && (
                 <img src={URL.createObjectURL(picture)} alt="Picture" />
               )}
             </div>
-            <div class="col-lg-4 me-auto">
+            <div className="col-lg-4 me-auto">
               <h1>{winner}</h1>
             </div>
           </div>
           {/* <!-- About Section Button--> */}
-          <div class="text-center mt-4">
+          <div className="text-center mt-4">
             <button
-              class="btn btn-primary btn-xl"
+              className="btn btn-primary btn-xl"
               onClick={handleClick}
               disabled={raffleList.length === 0}
             >
@@ -155,8 +158,8 @@ function NewYearRaffle() {
           </div>
         </div>
       </section>
-      <section class="page-section" id="contact">
-        <div class="container">
+      <section className="page-section" id="contact">
+        <div className="container">
                 <NewYearUI/>
         </div>
       </section>
