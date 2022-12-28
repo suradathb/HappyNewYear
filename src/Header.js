@@ -1,5 +1,6 @@
 import React from "react";
 import NewYearCountdown from "./NewYearCountdown";
+import "./NewYearReffle.css";
 
 class Header extends React.Component {
   constructor(props) {
@@ -42,13 +43,19 @@ class Header extends React.Component {
                   </a>
                 </li>
                 <li className="nav-item mx-0 mx-lg-1">
-                  <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#about">
+                  <a
+                    className="nav-link py-3 px-0 px-lg-3 rounded"
+                    href="#about"
+                  >
                     จับฉลาก
                   </a>
                 </li>
                 <li className="nav-item mx-0 mx-lg-1">
-                  <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">
-                    Contact
+                  <a
+                    className="nav-link py-3 px-0 px-lg-3 rounded"
+                    href="#contact"
+                  >
+                    ติดต่อเรา
                   </a>
                 </li>
               </ul>
@@ -61,8 +68,8 @@ class Header extends React.Component {
             <NewYearCountdown />
             {/* <!-- Masthead Avatar Image--> */}
             <img
-              className="masthead-avatar mb-5"
-              src="../assets/img/portfolio/cabin.png"
+              className="masthead-avatar mb-6"
+              src="../assets/img/portfolio/2023.png"
               alt="..."
             />
             {/* <!-- Masthead Heading--> */}
@@ -71,7 +78,11 @@ class Header extends React.Component {
             <div className="divider-custom divider-light">
               <div className="divider-custom-line"></div>
               <div className="divider-custom-icon">
-                <i className="fas fa-star"></i>
+                <img
+                  className="masthead-avatar mb-6 newyearhead"
+                  src="../assets/img/portfolio/happy-new-year.png"
+                  alt="..."
+                />
               </div>
               <div className="divider-custom-line"></div>
             </div>

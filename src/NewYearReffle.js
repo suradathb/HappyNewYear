@@ -51,7 +51,11 @@ function NewYearRaffle() {
           <div className="divider-custom">
             <div className="divider-custom-line"></div>
             <div className="divider-custom-icon">
-              <i className="fas fa-star"></i>
+              <img
+                className="masthead-avatar mb-6 newyear"
+                src="../assets/img/portfolio/2023.png"
+                alt="..."
+              />
             </div>
             <div className="divider-custom-line"></div>
           </div>
@@ -71,7 +75,10 @@ function NewYearRaffle() {
                   data-sb-validations="required"
                 />
                 <label htmlFor="name">Full name</label>
-                <div className="invalid-feedback" data-sb-feedback="name:required">
+                <div
+                  className="invalid-feedback"
+                  data-sb-feedback="name:required"
+                >
                   A name is required.
                 </div>
               </div>
@@ -82,7 +89,10 @@ function NewYearRaffle() {
                   name="picture"
                   accept="image/*"
                 />
-                <div className="invalid-feedback" data-sb-feedback="name:required">
+                <div
+                  className="invalid-feedback"
+                  data-sb-feedback="name:required"
+                >
                   A name is required.
                 </div>
               </div>
@@ -90,7 +100,10 @@ function NewYearRaffle() {
                 <button className="btn btn-primary btn-xl " type="submit">
                   Add to raffle
                 </button>
-                <div className="invalid-feedback" data-sb-feedback="name:required">
+                <div
+                  className="invalid-feedback"
+                  data-sb-feedback="name:required"
+                >
                   A name is required.
                 </div>
               </div>
@@ -99,8 +112,8 @@ function NewYearRaffle() {
             <table className="table">
               <thead>
                 <tr>
-                <th scope="col">ชื่อ</th>
-                <th scope="col">รูป</th>
+                  <th scope="col">ชื่อ</th>
+                  <th scope="col">รูป</th>
                 </tr>
               </thead>
               <tbody>
@@ -131,7 +144,11 @@ function NewYearRaffle() {
           <div className="divider-custom divider-light">
             <div className="divider-custom-line"></div>
             <div className="divider-custom-icon">
-              <i className="fas fa-star"></i>
+              <img
+                className="masthead-avatar mb-6 newyear"
+                src="../assets/img/portfolio/happy-new-year.png"
+                alt="..."
+              />
             </div>
             <div className="divider-custom-line"></div>
           </div>
@@ -139,11 +156,15 @@ function NewYearRaffle() {
           <div className="row">
             <div className="col-lg-4 ms-auto">
               {picture && (
-                <img src={URL.createObjectURL(picture)} alt="Picture" />
+                <img
+                  className="winimage"
+                  src={URL.createObjectURL(picture)}
+                  alt="Picture"
+                />
               )}
             </div>
             <div className="col-lg-4 me-auto">
-              <h1>{winner}</h1>
+              <h1 className="masthead-heading text-uppercase mb-0">{winner}</h1>
             </div>
           </div>
           {/* <!-- About Section Button--> */}
@@ -160,7 +181,7 @@ function NewYearRaffle() {
       </section>
       <section className="page-section" id="contact">
         <div className="container">
-                <NewYearUI/>
+          <NewYearUI />
         </div>
       </section>
     </>

@@ -63,9 +63,29 @@
   border-radius: 5px;
 }
 
-.showimage{
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    width: 150px;
+.showimage {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+.winimage {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 200px;
+}
+.newyear {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 70px;
+}
+
+.newyearhead {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 70px;
 }
