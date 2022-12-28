@@ -28,7 +28,7 @@ function NewYearUI() {
       <br></br>
       <h5 className="note">Note : เข้างานแล้วห้ามออกไปไหนนะเพราะอันตรายเราจะเมากัน</h5>
       <br></br>
-      <img className="show" src="https://media.giphy.com/media/XxePWdpdifKZr1Uhix/giphy.gif" alt="Fireworks" />
+      <img className="show responsive" src="https://media.giphy.com/media/XxePWdpdifKZr1Uhix/giphy.gif" alt="Fireworks" />
     </div>
   );
 }
